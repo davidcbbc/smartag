@@ -7,7 +7,7 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 # Smart Tag - Criação do dispositivo
 
-### O objetivo deste projeto consiste na criação de um dispositivo interligado que possibilite o agendamento de reuniões, numa determinada sala, acedendo a uma determinada conta do Google Calendar. Este dispositivo acede ao calendário e verifica se algum evento se encontra marcado para a hora em que se quer reservar a sala retornando a sua disponibilidade, ou não disponibilidade.
+### O objetivo deste projeto consiste na criação de um dispositivo interligado que possibilite o agendamento de reuniões, numa determinada sala, acedendo a uma determinada conta do Google Calendar. Este dispositivo acede ao calendário e verifica se algum evento se encontra marcado para a hora em que se quer reservar a sala retornando a sua disponibilidade, ou indisponibilidade.
 
 
 
@@ -73,7 +73,7 @@ NOTA:
 
 
 
-## Configuração conta e dispositivo no The Things Network:
+## Configuração conta e dispositivo no the things network:
 Para criar a conta e conectar o dispositivo, seguir os passos apresentados no seguinte link: https://www.thethingsnetwork.org/docs/devices/node/quick-start.html até ao ponto ‘The Things Npde example’.
 Nota: na secção Connect your Device, ponto 4, utilizar ‘Board > LilyPad Arduino USB’.
 
