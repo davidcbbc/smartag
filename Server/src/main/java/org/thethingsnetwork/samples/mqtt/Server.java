@@ -112,27 +112,40 @@ public class Server {
             data = (UplinkMessage) data;
             int port = ((UplinkMessage) data).getPort();
             try{
-                if(port == 4)           //porta 4 é do sinal do botao primido
-                if(calendario.existe_evento_agora(service)){
-                    Evento evt = new Evento(
-                            new Event()
-                                    .setSummary("Reunião")
-                                    .setLocation("Critical Software")
-                                    .setDescription("Uma nova reunião foi criada.")
-                            ,
-                            null,
-                            service
-                    );
-                    evt.setEvento(service.events().insert(evt.getCalendarID(),evt.getEvento()).execute());
-                    System.out.println("Evento criado: " + evt.getEvento().getHtmlLink() );
-                    System.out.println("Não existe nenhuma reunião de momento, a marcar reunião até as " + evt.time_stamp(evt.getFim().getDateTime().getValue()));
-                    DownlinkMessage dm = new DownlinkMessage(1,new byte[]{0x01});
-                    client.send("nas04",dm);            //envia sinal positivo (1)
-                } else  {
-                    System.out.println("Está a decorrer uma reunião de momento , por favor marque quando acabar.");
-                    DownlinkMessage dm = new DownlinkMessage(1,new byte[]{0x00});
-                    client.send("nas04",dm);            //envia sinal negativo (0)
+                if(port == 4) {           //porta 4 é do sinal do botao para marcacao
+                    if(calendario.existe_evento_agora(service)){
+                        Evento evt = new Evento(
+                                new Event()
+                                        .setSummary("Reunião")
+                                        .setLocation("Critical Software")
+                                        .setDescription("Uma nova reunião foi criada.")
+                                ,
+                                null,
+                                service
+                        );
+                        evt.setEvento(service.events().insert(evt.getCalendarID(),evt.getEvento()).execute());
+                        System.out.println("Evento criado: " + evt.getEvento().getHtmlLink() );
+                        System.out.println("Não existe nenhuma reunião de momento, a marcar reunião até as " + evt.time_stamp(evt.getFim().getDateTime().getValue()));
+                        DownlinkMessage dm = new DownlinkMessage(1,new byte[]{0x01});
+                        client.send("nas04",dm);            //envia sinal positivo (1)
+                    } else  {
+                        System.out.println("Está a decorrer uma reunião de momento , por favor marque quando acabar.");
+                        DownlinkMessage dm = new DownlinkMessage(2,new byte[]{0x00});
+                        client.send("nas04",dm);            //envia sinal negativo (0)
+                    }
+                } if(port == 5) {           // porta 5 é do sinal do botao para refresh
+                    if(calendario.existe_evento_agora(service)) {
+                        System.out.println("Refresh: não existe evento , a enviar informação");
+                        DownlinkMessage dm = new DownlinkMessage(1,new byte[]{0x00});
+                        client.send("nas04",dm);
+                    } else {
+                        System.out.println("Refresh: existe evento , a enviar informação");
+                        DownlinkMessage dm = new DownlinkMessage(2,new byte[]{0x01});
+                        client.send("nas04",dm);
+                    }
+
                 }
+
             }catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Apanhei excepcão ao calendário");
