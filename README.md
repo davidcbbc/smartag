@@ -35,7 +35,7 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 
 
-## Ligações
+## Ligações:
 
 | ESP32 | BadgerBoard | E-ink Display | BOTÃO |
 | --- | --- | --- | --- |
@@ -69,17 +69,17 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 NOTA: 
 - O VRX do botão não é necessário conectar.
-- Fotos do circuito podem ser vistas na pasta IMAGENS
+- Fotos do circuito podem ser vistas na pasta IMAGENS.
 
 
 
-## Configuração conta e dispositivo no The Things Network
+## Configuração conta e dispositivo no The Things Network:
 Para criar a conta e conectar o dispositivo, seguir os passos apresentados no seguinte link: https://www.thethingsnetwork.org/docs/devices/node/quick-start.html até ao ponto ‘The Things Npde example’.
 Nota: na secção Connect your Device, ponto 4, utilizar ‘Board > LilyPad Arduino USB’.
 
 
 
-## Configuração da API
+## Configuração da API:
 
 
 
