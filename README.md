@@ -5,13 +5,13 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 
 
-#Smart Tag - Criação do dispositivo
+# Smart Tag - Criação do dispositivo
 
-###O objetivo deste projeto consiste na criação de um dispositivo interligado que possibilite o agendamento de reuniões, numa determinada sala, acedendo a uma determinada conta do Google Calendar. Este dispositivo acede ao calendário e verifica se algum evento se encontra marcado para a hora em que se quer reservar a sala retornando a sua disponibilidade, ou não disponibilidade.
+### O objetivo deste projeto consiste na criação de um dispositivo interligado que possibilite o agendamento de reuniões, numa determinada sala, acedendo a uma determinada conta do Google Calendar. Este dispositivo acede ao calendário e verifica se algum evento se encontra marcado para a hora em que se quer reservar a sala retornando a sua disponibilidade, ou não disponibilidade.
 
 
 
-##Material utilizado:
+## Material utilizado:
 - Board ESP32 LORA:
 + Bluetooth
 + Wifi
@@ -27,7 +27,7 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 
 
-##Ferramentas utilizadas:
+## Ferramentas utilizadas:
 - Java
 - IntelliJ idea
 - The Things Network [https://www.thethingsnetwork.org/]
@@ -35,14 +35,14 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 
 
-##Conteúdo:
+## Conteúdo:
 - [Ligações] (#ligacoes)
 - [Configuração conta e dispositivo no The Things Network] (#ttn)
 - [Configuração da API] (#api)
 
 
 
-##Ligações
+## Ligações
 
 | ESP32 | BadgerBoard | E-ink Display | BOTÃO |
 | --- | --- | --- | --- |
@@ -80,13 +80,13 @@ NOTA:
 
 
 
-##Configuração conta e dispositivo no The Things Network
+## Configuração conta e dispositivo no The Things Network
 Para criar a conta e conectar o dispositivo, seguir os passos apresentados no seguinte link: https://www.thethingsnetwork.org/docs/devices/node/quick-start.html até ao ponto ‘The Things Npde example’.
 Nota: na secção Connect your Device, ponto 4, utilizar ‘Board > LilyPad Arduino USB’.
 
 
 
-##Configuração da API
+## Configuração da API
 
 
 
