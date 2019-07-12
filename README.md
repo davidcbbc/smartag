@@ -35,13 +35,6 @@ https://github.com/espressif/arduino-esp32/blob/master/README.md
 
 
 
-## Conteúdo:
-- [Ligações] (#ligacoes)
-- [Configuração conta e dispositivo no The Things Network] (#ttn)
-- [Configuração da API] (#api)
-
-
-
 ## Ligações
 
 | ESP32 | BadgerBoard | E-ink Display | BOTÃO |
